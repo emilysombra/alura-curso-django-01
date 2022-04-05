@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:12
+    container_name: aluracurso1-pg
+    environment:
+      POSTGRES_DB: aluracurso1db
+      POSTGRES_USER: aluracurso1
+      POSTGRES_PASSWORD: aluracurso1
+      TZ: 'America/Fortaleza'
+      PGTZ: 'America/Fortaleza'
+    network_mode: bridge
+    ports:
+      - 5432:5432
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
+    driver: local

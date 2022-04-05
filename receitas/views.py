@@ -6,4 +6,5 @@ def index(request):
 
 
 def receita(request):
-    return render(request, 'receita.html')
+    dados = {'nome_receita': 'gelo cozido'}
+    return render(request, 'receita.html', dados)
